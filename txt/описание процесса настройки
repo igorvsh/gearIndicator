@@ -64,4 +64,23 @@ while true {
 По прерыванию очищаю TCNT1, сбрасваю флаг, останавливаю таймер.
 
 
+Основной режим - normalMode up
+Режим настройки - setupMode up normalMode down
+Первый longPressTime normalMode up setupMode up 
+
+Таймер:
+- при старте считает до longPressTime
+- при переходе в настройки останавливается и запускается заново с интервалом 600мс
+- при срабатывании таймера блинк
+- при нажатии таймера блинк выключается, таймер считает до longPressTime пока нажата кнопка
+
+Кнопка :
+Button - свободный флаг
+buttonPressed - флаг для подавления дребезга
+
+Подавление дребезга:
+кнопка отжата pin 0 buttonPressed 0 ret 0
+Нажатие pin 1 buttonPressed 0; delay(40) buttonPressed=1 ret 1 
+Кнопка нажата pin 1 buttonPressed 1, ret 1
+Отпускание pin 0 buttonPressed 1, delay(40) ret 0   ret= pin|buttonPressed
 

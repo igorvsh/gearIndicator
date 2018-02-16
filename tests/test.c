@@ -27,16 +27,17 @@ uint8_t Flag = 0;
 
 
 int main() {
-    
-    setFlagUp(button);
-    printf("%x\n",Flag);
-    setFlagUp(setupMode);
-    printf("%x\n",Flag);
-    setFlagUp(setupNeeded);
-    printf("%x\n",Flag);
     setFlagUp(timer);
     printf("%x\n",Flag);
-    setFlagDown(setupNeeded);    
+    Flag ^= timer;
+    printf("%x\n",Flag);
+    Flag ^= timer;
+    printf("%x\n",Flag);
+
+    Flag ^= timer;
+    printf("%x\n",Flag);
+
+    Flag ^= timer;
     printf("%x\n",Flag);
 
     return 0;
