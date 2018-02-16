@@ -284,7 +284,6 @@ int main(void) {
         setFlagUp(setupMode);
         setFlagUp(blink);
         setupDevice(gears, sizeof(gears));
-//        initArray();
         storeToEeprom(gears, sizeof(gears)); // Сохраняю в EEPROM
         setFlagDown(setupNeeded);
     } else {
